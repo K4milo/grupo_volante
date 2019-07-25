@@ -1,0 +1,116 @@
+// Prefooter
+.pre-footer-widgets {
+	&__wrapper {
+		display: block;
+		@include wrapper;
+		width: 100%;
+		@include mq('md') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.site-pre-footer-widgets {
+			&__item {
+				
+				.textwidget {
+					h3 {
+						text-transform: uppercase;
+						font-family: $gal;
+						@include font(16px);
+						@include mq('md') {
+							@include font(20px);
+						}
+						strong {
+							font-family: $sk;
+							@include font(30px);
+							@include mq('md') {
+								@include font(50px);
+							}
+						}
+					}
+
+					p {
+						text-align: left;
+					}
+
+					form {
+
+						label {
+							display: block;
+						}
+
+						.wpcf7-form {						
+
+							&-control-wrap {
+								margin-bottom: rem(6px);
+								textarea,
+								input {
+									&.wpcf7-form-control {
+										border: none;
+										width: 100%;
+										height: auto;
+										padding: rem(10px) rem(15px);
+										border-radius: 0;
+										background-color: $yellow;
+										@include placeholder {
+											color: $white;
+										}
+									}									
+								}
+							}
+						}
+
+						input {
+							&.wpcf7-form-control {
+								&.wpcf7-submit {
+									margin: rem(12px) 0;
+									@include grayBtn();
+									border-radius: 0;
+									border: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Main footer
+.site-footer {
+	background-color: $gray;
+	padding: rem(22px);
+	p {
+		text-align: left;
+	}
+
+	&-widgets {
+		display: block;
+		@include wrapper;
+		width: 100%;
+		@include mq('md') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&__item {
+			margin: rem(12px) auto;
+			@include mq('md') {
+				width: 30%;
+				padding: 0 3%;
+			}
+		}
+	}
+
+	&-year {
+		padding: rem(15px) 0;
+		text-align: center;
+		a {
+			color: $white;
+		}
+		p {
+			text-align: center;
+		}
+	}
+}

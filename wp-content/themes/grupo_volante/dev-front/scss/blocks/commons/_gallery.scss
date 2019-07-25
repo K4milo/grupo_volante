@@ -1,0 +1,49 @@
+.gallery {
+	&-slider {
+		width: 100%;
+		max-width: rem(1220px);
+		margin: rem(40px) auto;
+		// Slide controls
+		.slick-dots {
+			bottom: rem(16px);
+			@include mq('md') {
+				@include center('vertical');
+				right: rem(20px);
+				width: rem(26px);
+				height: auto;
+				bottom: unset;
+			}
+			li {
+				display: inline-block;
+				margin: rem(7px);
+				width: rem(22px);
+				height: rem(22px);
+				background-color: $white;
+				&.slick-active {
+					background-color: $yellow;
+				}
+			}
+		}
+
+		// Slide items
+		&__row {
+			@include bgcover;
+			min-height: rem(550px);
+			position: relative;
+
+		}
+
+		&__caption {
+			@include center('both');
+			text-align: center;
+			h3 {
+				color: $white;
+				text-transform: uppercase;
+				@include font(20px);
+				@include mq('md') {
+					@include font(40px);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+body {
+	&.page-template-default {
+		article {
+			&.type-page {
+				
+			}
+		}
+	}
+
+	&.single {
+		article {
+			section {
+				&.single-content {
+					text-align: center;
+					@include font(18px);
+				}
+			}			
+		}
+	}
+}

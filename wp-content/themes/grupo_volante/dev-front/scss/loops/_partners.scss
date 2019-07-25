@@ -1,0 +1,38 @@
+.partners {
+	background-image: url('../images/bgs/aguas-residuales.jpg');
+	padding: rem(120px) rem(30px);
+	margin-bottom: rem(54px);
+	@include bgparallax;
+	
+	// Header
+	.header__top  {
+		h2 {
+			color: $white;
+		}
+	}
+
+	ul {
+		@include wrapper;
+		padding: 0 0; 
+	}
+	&__item {
+		display: block;
+		text-align: center;
+		padding: rem(15px); 
+		figure {
+			width: rem(180px);
+			height: rem(180px);
+			background-color: $white;
+			display: inline-block;
+			border-radius: 100%;
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+		}
+		img {
+			display: block;
+			max-width: rem(120px);
+			@include center('both');
+		}
+	}
+}

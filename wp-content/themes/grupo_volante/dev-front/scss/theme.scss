@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+// ------------------------ //
+// -- Commons -- //
+// ------------------------ //
+@import 'commons/fonts';
+@import 'commons/variables';
+@import 'commons/mixins';
+@import 'commons/general';
+@import 'commons/header';
+@import 'commons/headers';
+@import 'commons/footer';
+
+// -- Vendors -- //
+@import 'vendors/slick/slick';
+
+
+// ------------------------ //
+// -- Loops -- //
+// ------------------------ //
+@import 'loops/services';
+@import 'loops/partners';
+
+// ------------------------ //
+// -- Blocks -- //
+// ------------------------ //
+@import 'blocks/commons/slider';
+@import 'blocks/commons/gallery';
+
+// ------------------------ //
+// -- Pages -- //
+// ------------------------ //
+@import 'pages/default-page';

@@ -1,0 +1,65 @@
+.hero {
+	&-slider {
+		// Slide controls
+		.slick-dots {
+			bottom: rem(16px);
+		
+			li {
+				display: inline-block;
+				margin: rem(7px);
+				width: rem(14px);
+				height: rem(14px);
+				border-radius: 100%;
+				background-color: $white;
+				&.slick-active {
+					background-color: $marine;
+				}
+			}
+		}
+
+		// Slide items
+		&__row {
+			@include bgcover;
+			min-height: 60vh;
+			position: relative;
+			background-position: top center;
+			&::after {
+				content: "";
+				@include coverAbsolute(1);
+				background-color: rgba($black, 0.45);
+			}
+		}
+
+		&__caption {
+			@include center('both');
+			z-index: 2;
+			text-align: center;
+			h3 {
+				color: $white;
+				text-transform: uppercase;
+				@include font(20px);
+				@include mq('md') {
+					@include font(50px);
+				}
+			}
+			a {
+				@include yellowBtn;
+				margin-top: rem(20px);
+			}
+		}
+
+		&.banner {
+			@include bgparallax;
+			min-height: 80vh;
+			position: relative;
+			h2 {
+				color: $white;
+				text-transform: uppercase;
+				@include font(40px);
+				@include mq('md') {
+					@include font(80px);
+				}
+			}
+		}
+	}
+}

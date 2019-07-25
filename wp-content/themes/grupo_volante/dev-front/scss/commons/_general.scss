@@ -1,0 +1,33 @@
+body {
+	font-family: $ac;
+	font-size: 16px;
+	margin-top: 0;
+
+	strong,
+	b {
+		font-family: $bd;
+	}
+
+	h1,h2,h3,h4 {
+		font-family: $bd;	
+	}
+
+	// Link styles
+	
+	a {
+		transition: all 0.3s;
+		&:hover {
+			transition: all 0.2s;
+		}
+	}
+
+	// Under construction
+	&.page-template-_construction-tpl {
+		article {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

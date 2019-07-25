@@ -1,0 +1,81 @@
+.navbar {
+	position: relative;
+	margin: 0 0 0 0;
+	border: none;
+	@include mq('sm') {
+		padding: rem(20px) 0;
+		text-align: center;
+	}
+
+	// Scrolled menu styles
+	&.scroll_menu {
+		
+	}
+
+	.navbar-header {
+		@include mq('sm') {
+			display: inline-block !important;
+			vertical-align: bottom;
+			float: none;
+		}
+		.navbar-brand {
+			@include iconBg('../images/brand/logo.svg', 218px);
+			width: rem(218px);
+			height: rem(83px);
+			margin: rem(12px); 
+			display: inline-block;
+			vertical-align: bottom;
+			float: none;		
+		}
+	}
+
+	.navbar-collapse {
+		@include mq('sm') {
+			display: inline-block !important;
+			vertical-align: bottom;
+			float: none;
+		}
+
+		
+		// Navigation wrapper
+		.navigation-menu {
+			display: block;
+			@include mq('md') {
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 rem(20px);
+			}
+		}
+
+		// Menu
+		ul {
+			&.navbar-nav {
+				float: none;
+				clear: both;
+				> li {
+					display: block;
+					text-align: center;
+					@include mq('sm') {
+						text-align: left;
+						display: inline-block;
+						vertical-align: middle;
+						float: none;
+					}
+					a {
+						padding: 0 rem(4px);
+						
+						&:hover,
+						&:focus {
+							background-color: transparent;
+						}
+					}
+					&.active {				
+						a {
+							background-color: transparent;
+						}					
+					}
+				}
+			}
+		}
+	}
+}
