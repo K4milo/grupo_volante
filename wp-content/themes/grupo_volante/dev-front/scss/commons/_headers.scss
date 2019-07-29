@@ -20,7 +20,7 @@
 				display: block;
 				height: rem(5px);
 				width: rem(120px);
-				background-color: $yellow;
+				background-color: $blue;
 				@include center('horizontal');
 				bottom: 0;
 				@include mq('md') {

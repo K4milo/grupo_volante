@@ -34,7 +34,7 @@
 			}
 			.services__caption {
 				h3 {
-					color: $yellow;
+					color: $br-blue;
 					text-decoration: none;
 				}
 			}
@@ -52,7 +52,7 @@
 		}
 		&-overlay {
 			opacity: 0;
-			background-color: rgba($gray, 0.75);
+			background-color: rgba($br-blue, 0.75);
 			@include coverAbsolute(2);
 			transition: all 0.32s;
 			img {

@@ -114,7 +114,7 @@
 			var $SliderItems = $SliderWrapper.find('.hero-slider__row');
 			var $SlidesOpts = {
 				dots: true,
-				arrows: false,
+				arrows: true,
 				slidesToShow: 1,
 				slidesToScroll: 1
 			};
@@ -169,7 +169,7 @@
 			var $SliderItems = $SliderWrapper.find('.gallery-slider__row');
 			var $SlidesOpts = {
 				dots: true,
-				arrows: false,
+				arrows: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				vertical: true

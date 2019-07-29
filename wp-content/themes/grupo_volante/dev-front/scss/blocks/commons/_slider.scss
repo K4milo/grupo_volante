@@ -12,8 +12,23 @@
 				border-radius: 100%;
 				background-color: $white;
 				&.slick-active {
-					background-color: $marine;
+					background-color: $blue;
 				}
+			}
+		}
+
+		// Slick arrows
+		.slick-arrow {
+			width: rem(28px);
+			height: rem(40px);
+			z-index: 2;
+			&.slick-prev {
+				left: rem(20px);
+				@include iconBg('../images/icons/chevron-left.png');
+			}
+			&.slick-next {
+				right: rem(20px);
+				@include iconBg('../images/icons/chevron-right.png');
 			}
 		}
 

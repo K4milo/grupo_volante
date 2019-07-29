@@ -40,7 +40,7 @@
 			let $SliderItems   = $SliderWrapper.find('.hero-slider__row');
 			let $SlidesOpts = {
 				dots: true,
-				arrows: false,
+				arrows: true,
 				slidesToShow: 1,
 				slidesToScroll: 1
 			}
@@ -100,7 +100,7 @@
 			let $SliderItems   = $SliderWrapper.find('.gallery-slider__row');
 			let $SlidesOpts = {
 				dots: true,
-				arrows: false,
+				arrows: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				vertical: true
