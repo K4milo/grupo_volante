@@ -17,7 +17,7 @@ if (! isset($content_width))
 	$content_width = 600;
 
 function bst_excerpt_readmore() {
-	return '&nbsp; <a href="'. get_permalink() . '">' . '&hellip; ' . __('Read more', 'bst') . ' <i class="glyphicon glyphicon-arrow-right"></i>' . '</a></p>';
+	return '';
 }
 add_filter('excerpt_more', 'bst_excerpt_readmore');
 

@@ -61,6 +61,18 @@ $browser-context: 16; // Default
   z-index: $z;
 }
 
+@mixin afterTitle($width,$color){
+  &::after {
+    content: "";
+    display: block;
+    height: rem(5px);
+    width: $width;
+    background-color: $color;
+    left: 0;
+    bottom: 0;
+  }
+}
+
 
 @mixin bgparallax {
   background-attachment: fixed;

@@ -1,0 +1,51 @@
+.services-page {
+	.services {
+		&__row {
+			display: block;
+			@include mq('sm') {
+				display: flex;
+			}
+
+			&:nth-child(odd) {
+				@include mq('sm') {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&-thumbnail {
+				@include bgcover();
+				min-height: rem(230px);
+				@include mq('sm') {					
+					width: 50%;
+				}
+				figure {
+					@include bgcover();
+					@include mq('sm') {	
+						@include bgparallax;
+						background-size: 100% auto;
+					}
+				}
+			}
+
+			&--caption {
+				background-color: $br-blue;
+				color: $white;
+				padding: rem(30px);
+				@include mq('sm') {
+					padding: rem(50px) rem(65px);
+					width: 50%;
+				}
+
+				h3 {
+					@include font(30px);
+					position: relative;
+					padding-bottom: rem(22px);
+					@include mq('sm') {
+						@include font(50px);
+					}
+					@include afterTitle(rem(120px), $blue);
+				}
+			}
+		}
+	}
+}
