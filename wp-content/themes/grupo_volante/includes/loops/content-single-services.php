@@ -1,0 +1,137 @@
+<?php
+/*
+The Single Services Posts Loop
+=====================
+fields
+
+service_items
+    service_items_title
+    service_items_text
+    service_items_image
+    service_items_catalog
+    service_items_catalog_image
+    
+
+    service_items_ext
+        service_items_ext_icon
+        service_items_ext_title
+        service_items_ext_image
+        service_items_ext_text
+
+*/
+
+    // General Variables
+
+    $service_items = get_field('service_items');
+    $count = 0;
+    $count0 = 0;
+    $count1 = 0;
+    $count2 = 0;
+    $classesArray;
+?> 
+
+<?php if(have_posts()): while(have_posts()): the_post(); ?>
+    <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
+        <header class="header__top">
+            <h2><?php the_title()?></h2>
+        </header>
+        <section id="ContentService" class="service-content container">
+            <div class="service-content__content">
+                <?php the_content();?>
+            </div>
+            <div class="service-content__image">
+                <figure style="background-image: url(<?php the_post_thumbnail_url('full'); ?>)"></figure>
+            </div>            
+        </section>
+        <?php 
+            if($service_items): 
+                    
+            ?>
+            <section id="Atrributes"  class="service-attributes container">
+                <ul class="nav nav-tabs service-attributes-nav-tabs">
+                    <?php 
+                        while(have_rows('service_items')): the_row();
+
+                            if($count == 0):
+                                $classesArray = 'active';
+                            else:    
+                                $classesArray = '';
+                            endif;
+                    ?>
+                        <li class="<?php echo $classesArray; ?>"><a data-toggle="tab" href="#service-<?php echo $count; ?>"><?php the_sub_field('service_items_title'); ?></a></li>
+                    <?php $count++; endwhile; ?>
+                </ul>
+                <div class="tab-content">
+                    <?php 
+                        while(have_rows('service_items')): the_row();
+
+                            $service_items_ext = get_sub_field('service_items_ext');
+
+                            if($count0 == 0):
+                                $classesArray = 'active in';
+                            else:    
+                                $classesArray = '';
+                            endif;
+
+                        ?>
+                        <div id="service-<?php echo $count0; ?>" class="tab-pane fade <?php echo $classesArray; ?>">
+                            <h3><?php the_sub_field('service_items_title'); ?></h3>
+                            <?php the_sub_field('service_items_text'); ?>
+                            
+                            <?php
+                                // Nested services pills
+                            if($service_items_ext):
+                                
+                            ?>
+                                <ul class="nav nav-tabs service-attributes-nav-tabs__internal">
+                                    <?php 
+                                        while(have_rows('service_items_ext')): the_row();
+
+                                            if($count1 == 0):
+                                                $classesArray = 'active';
+                                            else:    
+                                                $classesArray = '';
+                                            endif;
+                                    ?>
+                                        <li class="<?php echo $classesArray; ?>"><a data-toggle="tab" href="#service-internal-<?php echo $count0.'_'.$count1; ?>"><?php the_sub_field('service_items_ext_title'); ?></a></li>
+                                    <?php $count1++; endwhile; ?>
+                                </ul>   
+
+                                <div class="tab-content service-attributes-tabs__internal">
+                                    <?php 
+                                        while(have_rows('service_items_ext')): the_row();
+
+                                            // Internal vars
+                                            $service_items_ext_title = get_sub_field('service_items_ext_title');
+                                            $service_items_ext_icon = get_sub_field('service_items_ext_icon');
+                                            $service_items_ext_image = get_sub_field('service_items_ext_image');
+                                            $service_items_ext_text = get_sub_field('service_items_ext_text');
+
+                                            if($count2 == 0):
+                                                $classesArray = 'active in';
+                                            else:    
+                                                $classesArray = '';
+                                            endif;
+
+                                        ?>
+                                        <div id="service-internal-<?php echo $count0.'_'.$count2; ?>" class="tab-pane fade <?php echo $classesArray; ?>">
+                                            <h4> <?php echo $service_items_ext_title; ?></h4>
+                                            <?php echo $service_items_ext_text; ?>
+                                        </div>
+
+                                    <?php $count2++;
+                                        endwhile; ?>
+                                </div>
+                            
+                            <?php endif;?>                
+
+                        </div>
+                    <?php $count0++; endwhile; ?>
+                </div>
+            </section>
+        <?php endif;?>
+    </article>
+
+<?php endwhile; ?>
+<?php else: get_template_part('includes/loops/content', 'none'); ?>
+<?php endif; ?>
