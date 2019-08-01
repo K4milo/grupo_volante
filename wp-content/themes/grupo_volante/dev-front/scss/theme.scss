@@ -10,6 +10,7 @@
 @import 'commons/header';
 @import 'commons/headers';
 @import 'commons/footer';
+@import 'commons/tabs-services';
 
 // -- Vendors -- //
 @import 'vendors/slick/slick';
@@ -32,3 +33,8 @@
 // ------------------------ //
 @import 'pages/default-page';
 @import 'pages/product-page';
+
+// ------------------------ //
+// -- Single -- //
+// ------------------------ //
+@import 'single/product';

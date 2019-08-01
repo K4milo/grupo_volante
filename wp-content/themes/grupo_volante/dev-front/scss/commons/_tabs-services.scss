@@ -1,0 +1,150 @@
+.service-attributes {
+	background-color: $gray-d8;
+	padding: rem(30px) rem(15px); 
+	@include mq('sm') {
+		padding: rem(40px); 
+	}
+	// Top navigation
+	&-nav-tabs {
+		@include mq('sm') {
+			display: flex;
+		}
+		> li {
+			border-radius: 0;
+			margin: 0 0;
+			@include mq('sm') {
+				margin: 0 rem(5px) 0 0;
+				float: none;
+				clear: both;
+			}
+			a {
+				@include font(14px);
+				font-family: $al-bd;
+				border-radius: 0;
+				background-color: $white;
+				margin: 0 0;
+				&:hover,
+				&:active,
+				&:focus {
+					color: $white;
+					background-color: $br-blue;
+				}
+			}
+			&.active {
+				border: none;
+				background-color: $br-blue;
+				a {
+					border: none;
+					color: $white;
+					background-color: $br-blue;
+					&:hover,
+					&:active,
+					&:focus {
+						color: $white;
+						background-color: $br-blue;
+					}
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		background-color: $white;
+		.tab-pane {			
+			padding: rem(20px);
+			min-height: rem(450px);
+			@include mq('sm') {
+				padding: rem(30px) rem(20px);
+			}
+
+			&__with-thumb {
+				margin-bottom: rem(20px);
+				@include mq('sm') {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			&__text {
+				@include mq('sm') {
+					width: 65%;
+					padding: 0 4%;
+					text-align: justify;
+				}				
+			}
+			
+			&__thumb {				
+				margin: rem(20px) auto;
+				text-align: center;
+				@include mq('sm') {
+					width: 35%;
+				}
+				img {
+					display: inline-block;
+					max-width: 100%;
+					padding: rem(12px);
+					border: rem(1px) solid $gray-lt;
+				}
+			}
+
+			h3 {
+				color: $br-blue;
+			}
+
+			table {
+				margin: rem(20px) auto;
+				box-shadow: 0 0 rem(10px) $gray-bd;
+				tr {
+					td {
+						padding: rem(10px);
+						border: rem(1px) solid $gray-lt;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		// Extention maps
+		&__ext {
+			@include mq('sm') {
+				display: flex;
+			}
+			&-menu {
+				box-shadow: 0 0 rem(10px) $gray-bd;
+				@include mq('sm') {
+					width: 35%;
+				}
+				li {
+					float: none;
+					display: block;
+					border-bottom: rem(1px) solid $gray-lt;
+					&.active {
+						border: none;
+						background-color: $blue;
+						margin: 0 0;
+						a {
+							border: none;
+							color: $white;
+							background-color: $blue;
+							margin: 0 0;
+							&:hover,
+							&:active,
+							&:focus {
+								color: $white;
+								background-color: $blue;
+							}
+						}
+					}
+				}
+			}
+			&-side {
+				@include mq('sm') {
+					text-align: justify;
+					width: 63%;
+					margin-left: 2%;
+				}
+			}
+		}
+	}
+}
