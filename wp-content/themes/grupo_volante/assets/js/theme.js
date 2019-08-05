@@ -181,6 +181,34 @@
 		}
 	};
 
+	// -- Map -- //
+	var $MapScope = {
+		// Constructor
+		init: function init() {
+			this.mapScripts();
+		},
+
+		mapScripts: function mapScripts() {
+			var map = L.map('theMap', {
+				center: [4.7166516, -74.033964],
+				zoom: 15
+			});
+
+			var gl = L.mapboxGL({
+				attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+				accessToken: 'no-token',
+				style: 'https://api.maptiler.com/maps/43f011b7-9356-4679-8ddb-44ad5bc907e1/style.json?key=4ByPNrAy6wHbEZdnwieo'
+			}).addTo(map);
+
+			var div_circle = L.divIcon({ className: 'circle' });
+			var markerItem = L.marker([4.7166516, -74.033964], { icon: div_circle }).addTo(map).bindPopup('<h3>Carrera 7c bis # 139-18</h3><p>Oficina 806 Bogotá – Colombia</p>').openPopup();
+
+			map.on('click', function () {
+				sidebar.hide();
+			});
+		}
+	};
+
 	// Trigger
 	$GeneralScope.init();
 
@@ -192,6 +220,11 @@
 	// Home Scripts
 	if ($('body').hasClass('single')) {
 		$SingleScope.init();
+	}
+
+	// Contact Page
+	if ($('body').hasClass('page-template-_contacto-tpl')) {
+		$MapScope.init();
 	}
 })(jQuery);
 

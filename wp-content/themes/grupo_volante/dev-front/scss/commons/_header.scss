@@ -1,21 +1,24 @@
 .navbar {
 	position: relative;
-	margin: 0 0 0 0;
+	margin: 0 0;
+	padding: 0 0;
 	border: none;
-	@include mq('sm') {
-		padding: rem(20px) 0;
+	@include mq('sm') {			
 		text-align: center;
 	}
 
 	// Scrolled menu styles
 	&.scroll_menu {
-		
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
 
 	.navbar-header {
 		@include mq('sm') {
 			display: inline-block !important;
-			vertical-align: bottom;
+			vertical-align: middle;
 			float: none;
 		}
 		.navbar-brand {
@@ -24,15 +27,18 @@
 			height: rem(83px);
 			margin: rem(12px); 
 			display: inline-block;
-			vertical-align: bottom;
-			float: none;		
+			vertical-align: middle;
+			float: none;
+			@include mq('sm') {
+				margin: rem(12px) rem(20px) rem(24px); 
+			}	
 		}
 	}
 
 	.navbar-collapse {
 		@include mq('sm') {
 			display: inline-block !important;
-			vertical-align: bottom;
+			vertical-align: middle;
 			float: none;
 		}
 
@@ -60,6 +66,7 @@
 						display: inline-block;
 						vertical-align: middle;
 						float: none;
+						margin: 0 rem(16px);
 					}
 					a {
 						padding: 0 rem(4px);

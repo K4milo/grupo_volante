@@ -25,6 +25,12 @@ function bst_enqueues() {
   	wp_register_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', false, null, true);
 	wp_enqueue_script('bootstrap-js');
 
+	wp_register_script('leaflet-js', get_template_directory_uri() . '/js/leaflet.js', false, null, true);
+	wp_enqueue_script('leaflet-js');
+	
+	wp_register_script('mapbox-js', get_template_directory_uri() . '/js/mapbox.js', false, null, true);
+	wp_enqueue_script('mapbox-js');
+
 	wp_register_script('bst-js', get_template_directory_uri() . '/js/bst.js', false, null, true);
 	wp_enqueue_script('bst-js');
 

@@ -1,8 +1,38 @@
 body {
 	&.page-template-default {
-		article {
-			&.type-page {
+		&.page {
+			.single-page {
 				
+				&__wrapper {
+					padding: rem(32px);
+					min-height: 40vh;
+					@include mq('md') {
+						padding: rem(52px) 0;
+						display: flex;
+						flex-wrap: wrap;
+					}
+				}
+
+				&__content {
+					padding: 0 rem(20px);
+					@include mq('md') {
+						text-align: justify;
+						width: 50%;
+						padding: 0 rem(40px);
+					}
+				}
+
+				&__image {
+					min-height: rem(220px);
+					position: relative;
+					@include mq('md') {
+						width: 50%;
+					}
+					figure {
+						@include bgcover;
+						@include coverAbsolute(1);
+					}
+				}
 			}
 		}
 	}

@@ -1,0 +1,33 @@
+.page-contact {
+	&__wrapper {
+		display: block;
+		padding: rem(30px);
+		@include mq('sm') {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		> div {
+			display: block;
+			min-height: rem(150px);
+			@include mq('sm') {
+				width: 50%;
+			}
+		}
+
+		form {
+			padding: 0 rem(20px);
+			@include mq('sm') {
+				padding: 0 rem(40px);
+			}
+			label {
+				display: block;
+			}
+		}
+	}
+	&__right {
+		#theMap {
+			height: 100%;
+			min-height: rem(230px);
+		}
+	}
+}
