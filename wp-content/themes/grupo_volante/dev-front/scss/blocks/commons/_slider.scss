@@ -59,7 +59,8 @@
 			}
 			a {
 				@include yellowBtn;
-				margin-top: rem(20px);
+				padding: rem(10px) rem(20px); 
+				margin-top: rem(100px);
 			}
 		}
 

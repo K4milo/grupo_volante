@@ -1,74 +1,62 @@
 // Prefooter
 .pre-footer-widgets {
+	background-color: $gray-dk;
 	&__wrapper {
 		display: block;
 		@include wrapper;
 		width: 100%;
+		padding: rem(20px); 
+		@include wrapper;
 		@include mq('md') {
+			padding: rem(30px) 0;
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			justify-content: space-between;
+			align-items: center;
 		}
 		.site-pre-footer-widgets {
 			&__item {
-				
-				.textwidget {
-					h3 {
-						text-transform: uppercase;
-						font-family: $gal;
-						@include font(16px);
-						@include mq('md') {
-							@include font(20px);
-						}
-						strong {
-							font-family: $sk;
-							@include font(30px);
-							@include mq('md') {
-								@include font(50px);
-							}
-						}
+				color: $white;
+				h4 {
+					display: none;
+				}
+				.textwidget {					
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: center;
+				}
+				figure {
+					width: 30%;
+					display: inline-block;
+					padding-bottom: rem(12px);
+					margin-bottom: rem(12px);
+					border-right: rem(2px) solid $white;
+					img {
+						display: inline-block;
+						max-width: 80%;
 					}
-
-					p {
-						text-align: left;
-					}
-
-					form {
-
-						label {
-							display: block;
+				}
+				ul {
+					width: 70%;
+					padding-left: rem(30px);
+					li {
+						display: block;
+						vertical-align: middle;
+						margin-bottom: rem(16px);
+						span {
+							display: inline-block;
+							width: rem(30px);
+							height: rem(30px);
+							line-height: 2;
+							background-color: $blue;
+							color: $white;
+							margin-right: rem(12px);
+							text-align: center;
+							font-size: rem(16px);
 						}
-
-						.wpcf7-form {						
-
-							&-control-wrap {
-								margin-bottom: rem(6px);
-								textarea,
-								input {
-									&.wpcf7-form-control {
-										border: none;
-										width: 100%;
-										height: auto;
-										padding: rem(10px) rem(15px);
-										border-radius: 0;
-										background-color: $blue;
-										@include placeholder {
-											color: $white;
-										}
-									}									
-								}
-							}
-						}
-
-						input {
-							&.wpcf7-form-control {
-								&.wpcf7-submit {
-									margin: rem(12px) 0;
-									@include grayBtn();
-									border-radius: 0;
-									border: none;
-								}
-							}
+						a {
+							color: $white;
 						}
 					}
 				}
@@ -79,14 +67,15 @@
 
 // Main footer
 .site-footer {
-	background-color: $gray;
-	padding: rem(22px);
+	background-color: $black;
+	padding: rem(10px) 0;
 	p {
 		text-align: left;
 	}
 
 	&-widgets {
 		display: block;
+		margin: 0 0;
 		@include wrapper;
 		width: 100%;
 		@include mq('md') {
@@ -104,8 +93,10 @@
 	}
 
 	&-year {
-		padding: rem(15px) 0;
+		padding: rem(5px) 0;
+		margin: 0 0;
 		text-align: center;
+		color: $white;
 		a {
 			color: $white;
 		}

@@ -4,7 +4,7 @@
 	padding: 0 0;
 	border: none;
 	@include mq('sm') {			
-		text-align: center;
+		text-align: left;
 	}
 
 	// Scrolled menu styles
@@ -15,31 +15,44 @@
 		width: 100%;
 	}
 
+	// Layout fix
+	.row-header {
+		@include mq('sm') {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+
 	.navbar-header {
 		@include mq('sm') {
-			display: inline-block !important;
+			display: inline-flex !important;
 			vertical-align: middle;
 			float: none;
 		}
 		.navbar-brand {
 			@include iconBg('../images/brand/logo.svg', 218px);
-			width: rem(218px);
-			height: rem(83px);
-			margin: rem(12px); 
+			width: rem(148px);
+			height: rem(63px);
+			margin: 0 rem(12px); 
 			display: inline-block;
 			vertical-align: middle;
 			float: none;
 			@include mq('sm') {
-				margin: rem(12px) rem(20px) rem(24px); 
+				width: rem(238px);
+				height: rem(103px);
+				margin: 0 0 0 rem(45px); 
 			}	
 		}
 	}
 
 	.navbar-collapse {
 		@include mq('sm') {
-			display: inline-block !important;
+			display: inline-flex !important;
 			vertical-align: middle;
 			float: none;
+			margin-right: rem(80px);
 		}
 
 		
@@ -63,6 +76,7 @@
 					text-align: center;
 					@include mq('sm') {
 						text-align: left;
+						text-transform: uppercase;
 						display: inline-block;
 						vertical-align: middle;
 						float: none;
@@ -74,11 +88,15 @@
 						&:hover,
 						&:focus {
 							background-color: transparent;
+							color: $blue;
 						}
 					}
 					&.active {				
 						a {
 							background-color: transparent;
+							color: $br-blue;
+							font-family: $bd;
+							border-bottom: rem(3px) solid $blue;
 						}					
 					}
 				}

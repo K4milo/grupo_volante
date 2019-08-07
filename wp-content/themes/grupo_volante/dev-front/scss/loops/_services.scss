@@ -1,6 +1,7 @@
 .services {
 	> .container-fluid {
 		display: block;
+		@include wrapper;
 		@include mq('md') {
 			display: flex;
 			flex-wrap: wrap;
@@ -44,11 +45,11 @@
 	&__thumb {
 		@include bgcover;
 		width: 100%;
-		height: rem(320px);
+		height: rem(220px);
 		position: relative;
 		overflow: hidden;
 		@include mq('md') {
-			height: rem(420px);
+			height: rem(270px);
 		}
 		&-overlay {
 			opacity: 0;
@@ -57,18 +58,23 @@
 			transition: all 0.32s;
 			img {
 				display: block;
-				max-width: rem(90px);				
+				max-width: rem(50px);				
 				transition: all 0.32s;
 				@include center('horizontal');
 				top: -100%;
 				@include mq('md') {
-					max-width: rem(130px);
+					max-width: rem(90px);
 				}
 			}
 		}
 	}
 
 	&__caption {
+		text-align: center;
+		img {
+			max-width: 80%;
+			display: inline-block;
+		}
 		h3 {
 			text-transform: uppercase;
 			text-decoration: none;

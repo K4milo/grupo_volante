@@ -24,7 +24,7 @@ if($query->have_posts()): ?>
 						</div>
 					</figure>
 					<div class="services__caption">
-						<h3><?php the_title(); ?></h3>
+						<img src="<?php the_field('service_logo'); ?>" alt="<?php the_title(); ?>">
 					</div>
 				</a>
 			</article>
