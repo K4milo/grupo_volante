@@ -33,7 +33,7 @@ service_items
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
         <header class="header__top">
-            <h2><?php the_title()?></h2>
+            <img src="<?php the_field('service_logo'); ?>" alt="<?php the_title(); ?>">
         </header>
         <section id="ContentService" class="service-content container">
             <div class="service-content__content">

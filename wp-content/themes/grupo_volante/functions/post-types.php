@@ -17,7 +17,7 @@ function create_posttype() {
 				'singular_name' => __( 'Producto')
 			),
 			'rewrite' => array('slug' => 'producto'),
-			'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields'),
+			'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields','excerpt'),
 			'public' => true,
 			'hierarchical'        => false,
 			'show_ui'             => true,

@@ -2,7 +2,7 @@
 	padding: rem(32px);
 	min-height: 40vh;
 	@include mq('md') {
-		padding: rem(52px) 0;
+		padding: rem(12px) 0 rem(52px);
 		display: flex;
 		flex-wrap: wrap;
 	}

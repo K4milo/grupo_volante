@@ -2,8 +2,26 @@
 	&__top {
 		display: block;
 		text-align: center;
-		padding: rem(22px) 0;
-		margin-bottom: rem(30px);
+		padding: rem(22px) 0 0;
+		img {
+			display: inline-block;
+			max-width: 90%;
+			position: relative;
+			padding-bottom: rem(16px);
+			&::after {
+				content: "";
+				display: block;
+				height: rem(5px);
+				width: rem(120px);
+				background-color: $blue;
+				@include center('horizontal');
+				bottom: 0;
+				@include mq('md') {
+					width: rem(220px);
+				}
+			}
+		}
+
 		h2 {
 			color: $gray;
 			display: inline-block;

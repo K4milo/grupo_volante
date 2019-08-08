@@ -14,12 +14,14 @@
 
 			&-thumbnail {
 				@include bgcover();
-				min-height: rem(230px);
+				min-height: rem(250px);
 				@include mq('sm') {					
 					width: 50%;
+					min-height: rem(410px);
 				}
 				figure {
 					@include bgcover();
+					height: 100%;
 					@include mq('sm') {	
 						@include bgparallax;
 						background-size: 100% auto;
@@ -31,19 +33,45 @@
 				background-color: $br-blue;
 				color: $white;
 				padding: rem(30px);
+				text-align: center;
 				@include mq('sm') {
-					padding: rem(50px) rem(65px);
+					padding: rem(50px) rem(65px) 0;
 					width: 50%;
+					text-align: justify;
 				}
 
-				h3 {
-					@include font(30px);
-					position: relative;
-					padding-bottom: rem(22px);
-					@include mq('sm') {
-						@include font(50px);
+				header {
+					text-align: left;
+					img {
+						margin: 0 auto rem(30px);
+						display: inline-block;
+						vertical-align: bottom;
+						max-width: rem(160px);
+						height: auto;
 					}
-					@include afterTitle(rem(120px), $blue);
+
+					h3 {
+						@include font(20px);
+						position: relative;
+						padding-bottom: rem(22px);
+						display: inline-block;
+						vertical-align: bottom;
+						width: 77%;
+						@include mq('sm') {
+							@include font(30px);
+						}
+						@include afterTitle(rem(120px), $blue);
+					}
+				}
+
+				&-actions {
+					margin: rem(50px) 0 0;
+					text-align: right;
+				}
+
+				a {
+					@include yellowBtn(10px, 16px);
+					padding: rem(10px) rem(20px); 
 				}
 			}
 		}
