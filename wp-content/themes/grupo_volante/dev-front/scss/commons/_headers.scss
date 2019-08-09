@@ -2,7 +2,7 @@
 	&__top {
 		display: block;
 		text-align: center;
-		padding: rem(22px) 0 0;
+		padding: rem(22px) 0;
 		img {
 			display: inline-block;
 			max-width: 90%;
@@ -28,10 +28,35 @@
 			@include font(30px);
 			text-transform: uppercase;
 			position: relative;
-			padding-bottom: rem(16px);
+			padding-bottom: rem(10px);
 			margin: 0 0;
 			@include mq('md') {
 				@include font(60px);
+			}
+			&::after {
+				content: "";
+				display: block;
+				height: rem(5px);
+				width: rem(120px);
+				background-color: $blue;
+				@include center('horizontal');
+				bottom: 0;
+				@include mq('md') {
+					width: rem(220px);
+				}
+			}
+		}
+
+		h3 {
+			color: $gray;
+			display: block;
+			@include font(20px);
+			text-transform: uppercase;
+			position: relative;
+			padding-bottom: rem(10px);
+			margin: 0 0;
+			@include mq('md') {
+				@include font(40px);
 			}
 			&::after {
 				content: "";

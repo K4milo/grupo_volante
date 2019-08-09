@@ -35,13 +35,13 @@
 		// Slide items
 		&__row {
 			@include bgcover;
-			min-height: 60vh;
+			min-height: 80vh;
 			position: relative;
 			background-position: top center;
 			&::after {
 				content: "";
 				@include coverAbsolute(1);
-				background-color: rgba($black, 0.45);
+				background-color: rgba($black, 0.25);
 			}
 		}
 

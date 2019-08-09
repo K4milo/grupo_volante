@@ -4,6 +4,18 @@
 	</div>
 </section>
 
+<section class="pre-footer-marajuera">
+	<div class="container pre-footer-marajuera__warpper">
+		<figure>
+			<img src="<?php bloginfo('template_url')?>/dev-front/images/brand/marajuera.png" alt="fundación marajuera"/>
+		</figure>
+		<h5>
+			Porque creemos en el país, creamos país.<br/>
+			Grupo Volante es aliado de la Fundación Marajuera.
+		</h5>
+	</div>
+</section>
+
 <footer class="container-fluid site-footer"> 
 	<div class="row site-footer-widgets">
 		<?php dynamic_sidebar('footer-widget-area'); ?>

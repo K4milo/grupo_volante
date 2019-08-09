@@ -28,12 +28,16 @@ service_items
     $count1 = 0;
     $count2 = 0;
     $classesArray;
+
+    global $post;
+
 ?> 
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
         <header class="header__top">
             <img src="<?php the_field('service_logo'); ?>" alt="<?php the_title(); ?>">
+            <h3><?php the_title(); ?></h3>
         </header>
         <section id="ContentService" class="service-content container">
             <div class="service-content__content">
@@ -94,7 +98,7 @@ service_items
                             
                             <?php
                                 // Nested services pills
-                            if($service_items_ext):
+                            if($service_items_ext && $post->ID != 33):
                                 
                             ?>
                                 <div class="tab-content__ext">
@@ -140,6 +144,34 @@ service_items
                                             endwhile; ?>
                                     </div>
                                 </div>
+
+                            <?php elseif($post->ID == 33): ?>
+
+                                    <div class="tab-content tab-content__ext-grouped">
+                                        <?php 
+                                            while(have_rows('service_items_ext')): the_row();
+
+                                                // Internal vars
+                                                $service_items_ext_title = get_sub_field('service_items_ext_title');
+                                                $service_items_ext_icon = get_sub_field('service_items_ext_icon');
+                                                $service_items_ext_image = get_sub_field('service_items_ext_image');
+                                                $service_items_ext_text = get_sub_field('service_items_ext_text');
+
+                                                if($count2 == 0):
+                                                    $classesArray = 'active in';
+                                                else:    
+                                                    $classesArray = '';
+                                                endif;
+
+                                            ?>
+                                            <div id="service-internal-<?php echo $count0.'_'.$count2; ?>" class="tab-content tab-content__ext-grouped__item">
+                                                <h4><?php echo $service_items_ext_title; ?></h4>
+                                                <?php echo $service_items_ext_text; ?>
+                                            </div>
+
+                                        <?php $count2++;
+                                            endwhile; ?>
+                                    </div>
                             
                             <?php endif;?>                
 

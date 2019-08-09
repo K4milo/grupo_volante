@@ -92,10 +92,21 @@
 				color: $br-blue;
 			}
 
+			small {
+				font-size: 65%;
+			}
+
 			table {
 				margin: rem(20px) auto;
 				box-shadow: 0 0 rem(10px) $gray-bd;
 				tr {
+					th {
+						background-color: $br-blue;
+						padding: rem(10px);
+						border: rem(1px) solid $white;
+						color: $white;
+						text-align: center;
+					}
 					td {
 						padding: rem(10px);
 						border: rem(1px) solid $gray-lt;
@@ -143,6 +154,21 @@
 					text-align: justify;
 					width: 63%;
 					margin-left: 2%;
+				}
+			}
+			&-grouped {
+				display: block;
+				margin: rem(16px) auto;
+				@include mq('sm') {
+					display: flex;
+					flex-wrap: wrap;
+				}
+				&__item {
+					padding: rem(10px); 
+					@include mq('sm') {
+						padding: rem(20px); 
+						width: 33.3%;
+					}
 				}
 			}
 		}

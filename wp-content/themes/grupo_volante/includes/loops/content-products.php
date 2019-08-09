@@ -24,6 +24,7 @@ if($query->have_posts()): ?>
 				<div class="services__row--caption">
 					<header>
 						<img src="<?php the_field('service_logo'); ?>" alt="<?php the_title(); ?>">
+						<h3><?php the_title(); ?></h3>
 					</header>
 					<?php the_excerpt(); ?>					
 					<div class="services__row--caption-actions">

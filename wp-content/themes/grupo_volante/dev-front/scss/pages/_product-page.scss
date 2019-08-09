@@ -1,5 +1,12 @@
 .services-page {
+	// Layout fix
+	.container-fluid {
+		margin-top: rem(50px);
+	}
+	
+	// Loop items
 	.services {
+		margin-top: rem(60px);
 		&__row {
 			display: block;
 			@include mq('sm') {
@@ -35,7 +42,7 @@
 				padding: rem(30px);
 				text-align: center;
 				@include mq('sm') {
-					padding: rem(50px) rem(65px) 0;
+					padding: rem(50px) rem(65px);
 					width: 50%;
 					text-align: justify;
 				}
@@ -54,9 +61,7 @@
 						@include font(20px);
 						position: relative;
 						padding-bottom: rem(22px);
-						display: inline-block;
-						vertical-align: bottom;
-						width: 77%;
+						display: block;
 						@include mq('sm') {
 							@include font(30px);
 						}
