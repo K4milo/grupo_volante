@@ -29,10 +29,6 @@
 				figure {
 					@include bgcover();
 					height: 100%;
-					@include mq('sm') {	
-						@include bgparallax;
-						background-size: 100% auto;
-					}
 				}
 			}
 

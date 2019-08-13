@@ -9,27 +9,53 @@
 
 	&__content {
 		padding: 0 rem(20px);
+		text-align: center;
 		@include mq('md') {
 			text-align: justify;
 			width: 50%;
 			padding: 0 rem(40px);
 		}
 		img {
-			margin: rem(12px) 0;
+			display: block;
+			margin: rem(12px) auto;
+			padding: rem(6px);
+			border: rem(1px) solid $gray-lt;
 			max-width: 100%;
 			height: auto;
 		}
 	}
 
 	&__image {
-		min-height: rem(220px);
+		
 		position: relative;
 		@include mq('md') {
 			width: 50%;
 		}
+		
 		figure {
 			@include bgcover;
-			@include coverAbsolute(1);
+			position: relative;
+			height: rem(220px);
+			@include mq('md') {
+				height: rem(520px);
+			}
+		}
+
+		&--text {
+			padding: rem(20px);
+			text-align: center;
+			@include mq('md') {
+				text-align: justify;
+				padding: rem(10px);
+			}
+			img {
+				display: block;
+				margin: rem(12px) auto;
+				padding: rem(6px);
+				border: rem(1px) solid $gray-lt;
+				max-width: 100%;
+				height: auto;
+			}
 		}
 	}
 }

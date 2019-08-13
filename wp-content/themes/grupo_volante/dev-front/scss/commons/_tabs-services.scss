@@ -57,6 +57,41 @@
 				padding: rem(30px) rem(20px);
 			}
 
+			&.image-enable {
+				.text-wrapper {
+					display: none;
+				}
+				.image-wrapper {
+					display: none;
+				}
+				&.in {
+					@include mq('sm') {
+						display: flex;
+						flex-wrap: wrap;
+					}
+					.text-wrapper {
+						display: block;
+						@include mq('sm') {
+							width: 50%;
+						}
+					}
+					.image-wrapper {
+						display: block;
+						padding: rem(20px);
+						@include mq('sm') {
+							width: 50%;
+							padding: 0 rem(30px);
+						}
+						img {
+							max-width: 100%;
+							height: auto;
+							padding: rem(10px);
+							border: rem(1px) solid $gray-lt; 
+						}
+					}
+				}
+			}
+
 			&__with-thumb {
 				margin-bottom: rem(20px);
 				@include mq('sm') {
@@ -71,7 +106,38 @@
 					width: 65%;
 					padding: 0 4%;
 					text-align: justify;
-				}				
+				}
+				h4 {
+					@include font(25px);
+					position: relative;
+					padding-bottom: rem(12px);
+					margin-bottom: rem(12px);
+					@include mq('sm') {
+						@include font(25px);
+					}
+					&::after {
+						content: "";
+						display: block;
+						height: rem(5px);
+						width: rem(120px);
+						background-color: $blue;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						@include mq('md') {
+							width: rem(220px);
+						}
+					}
+				}
+
+				img {
+					display: block;
+					margin: rem(12px) auto;
+					max-width: 100%;
+					height: auto;
+					padding: rem(10px);
+					border: rem(1px) solid $gray-lt; 
+				}		
 			}
 			
 			&__thumb {				
@@ -85,6 +151,9 @@
 					max-width: 100%;
 					padding: rem(12px);
 					border: rem(1px) solid $gray-lt;
+					&.image-2 {
+						margin-top: rem(240px);
+					}
 				}
 			}
 
@@ -121,29 +190,62 @@
 			@include mq('sm') {
 				display: flex;
 			}
+			&-chemetrics {
+				@include mq('sm') {
+					flex-wrap: wrap;
+				}
+			}
+
 			&-menu {
 				box-shadow: 0 0 rem(10px) $gray-bd;
 				@include mq('sm') {
 					width: 35%;
 				}
-				li {
-					float: none;
-					display: block;
-					border-bottom: rem(1px) solid $gray-lt;
-					&.active {
-						border: none;
-						background-color: $blue;
-						margin: 0 0;
-						a {
+				&-chemetrics {
+					@include mq('sm') {
+						box-shadow: none;
+						flex-shrink: 0;
+						width: 100%;
+					}
+				}
+				.nav-tabs {
+					&-chemetrics {
+						@include mq('sm') {
+							display: flex;
+						}
+						li {
+							@include mq('sm') {
+								border: rem(1px) solid $gray-lt;
+								display: table;
+								height: rem(66px);
+								a {
+									display: table-cell;
+									vertical-align: middle;
+									margin: 0 0;
+									text-align: center;
+								}
+							}
+						}
+					}
+					li {
+						float: none;
+						display: block;
+						border-bottom: rem(1px) solid $gray-lt;
+						&.active {
 							border: none;
-							color: $white;
 							background-color: $blue;
 							margin: 0 0;
-							&:hover,
-							&:active,
-							&:focus {
+							a {
+								border: none;
 								color: $white;
 								background-color: $blue;
+								margin: 0 0;
+								&:hover,
+								&:active,
+								&:focus {
+									color: $white;
+									background-color: $blue;
+								}
 							}
 						}
 					}
@@ -155,6 +257,13 @@
 					width: 63%;
 					margin-left: 2%;
 				}
+				
+				&.tab-content-chemetrics {
+					flex-shrink: 0;
+					width: 100%;
+					margin: 0 0;
+				}
+
 			}
 			&-grouped {
 				display: block;

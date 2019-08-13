@@ -190,8 +190,8 @@
 
 		mapScripts: function mapScripts() {
 			var map = L.map('theMap', {
-				center: [4.7166516, -74.033964],
-				zoom: 15
+				center: [4.7171484, -74.030713],
+				zoom: 17
 			});
 
 			var gl = L.mapboxGL({
@@ -201,7 +201,7 @@
 			}).addTo(map);
 
 			var div_circle = L.divIcon({ className: 'circle' });
-			var markerItem = L.marker([4.7163797, -74.0311245], { icon: div_circle }).addTo(map).bindPopup('<h3>Carrera 7c bis # 139-18</h3><p>Oficina 806 Bogotá – Colombia</p>').openPopup();
+			var markerItem = L.marker([4.7171484, -74.030713], { icon: div_circle }).addTo(map).bindPopup('<h3>Carrera 7 C Bis # 139-18</h3><p>Oficina 806 Bogotá – Colombia</p>').openPopup();
 
 			map.on('click', function () {
 				sidebar.hide();

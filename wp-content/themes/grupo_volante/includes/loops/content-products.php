@@ -15,11 +15,17 @@ if($query->have_posts()): ?>
 		<div class="container-fluid">
 		<?php while ( $query->have_posts() ) : $query->the_post(); 
 			$slug = get_post_field( 'post_name', get_the_ID() );
+			$prod_image = get_field('service_image');
 		?>
 			<article class="services__row row">
 				<a href="<?php the_permalink(); ?>"  class="services__row-thumbnail">
-					<figure class="services__thumb" style="background-image: url('<?php the_post_thumbnail_url("full"); ?>');">
-					</figure>
+					<?php if($prod_image): ?>
+						<figure class="services__thumb" style="background-image: url('<?php echo $prod_image; ?>');">
+						</figure>
+					<?php else: ?>	
+						<figure class="services__thumb" style="background-image: url('<?php the_post_thumbnail_url("full"); ?>');">
+						</figure>
+					<?php endif;?>
 				</a>
 				<div class="services__row--caption">
 					<header>

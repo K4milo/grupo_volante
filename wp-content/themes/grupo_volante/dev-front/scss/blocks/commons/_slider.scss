@@ -1,17 +1,21 @@
 .hero {
 	&-slider {
+		
 		// Slide controls
 		.slick-dots {
 			bottom: rem(16px);
-		
 			li {
 				display: inline-block;
+				vertical-align: middle;
 				margin: rem(7px);
 				width: rem(14px);
 				height: rem(14px);
 				border-radius: 100%;
-				background-color: $white;
+				background-color: rgba($white,0.5);
+				transition: all 0.34s;
 				&.slick-active {
+					width: rem(15px);
+					height: rem(15px);
 					background-color: $blue;
 				}
 			}
@@ -19,18 +23,19 @@
 
 		// Slick arrows
 		.slick-arrow {
-			width: rem(28px);
-			height: rem(40px);
-			z-index: 2;
-			&.slick-prev {
-				left: rem(20px);
-				@include iconBg('../images/icons/chevron-left.png');
-			}
-			&.slick-next {
-				right: rem(20px);
-				@include iconBg('../images/icons/chevron-right.png');
-			}
+		        width: rem(28px);
+		        height: rem(40px);
+		        z-index: 2;
+		        &.slick-prev {
+		                left: rem(20px);
+		                @include iconBg('../images/icons/chevron-left.png');
+		        }
+		        &.slick-next {
+		                right: rem(20px);
+		                @include iconBg('../images/icons/chevron-right.png');
+		        }
 		}
+
 
 		// Slide items
 		&__row {
@@ -69,9 +74,9 @@
 			min-height: 40vh;
 			position: relative;
 			h2 {
-				color: $white;
-				text-transform: uppercase;
-				@include font(40px);
+			color: $white;
+			text-transform: uppercase;
+			@include font(40px);
 				@include mq('md') {
 					@include font(80px);
 				}

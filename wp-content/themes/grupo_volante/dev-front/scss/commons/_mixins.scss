@@ -32,6 +32,9 @@ $browser-context: 16; // Default
   @else if $consulta == md {
     @media #{$media-md}  { @content; }
   }
+  @else if $consulta == tb {
+    @media (min-width: 768px) and (max-width: 1199px)  { @content; }
+  }
   @else if $consulta == lg {
     @media #{$media-lg}  { @content; }
   }

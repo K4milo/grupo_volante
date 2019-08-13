@@ -3,7 +3,7 @@
 	margin: 0 0;
 	padding: 0 0;
 	border: none;
-	@include mq('sm') {			
+	@include mq('md') {			
 		text-align: left;
 	}
 
@@ -17,7 +17,7 @@
 
 	// Layout fix
 	.row-header {
-		@include mq('sm') {
+		@include mq('md') {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -26,20 +26,20 @@
 
 
 	.navbar-header {
-		@include mq('sm') {
+		@include mq('md') {
 			display: inline-flex !important;
 			vertical-align: middle;
 			float: none;
 		}
 		.navbar-brand {
-			@include iconBg('../images/brand/logo.svg', 218px);
+			@include iconBg('../images/brand/logo.svg');
 			width: rem(148px);
 			height: rem(63px);
 			margin: 0 rem(12px); 
 			display: inline-block;
 			vertical-align: middle;
 			float: none;
-			@include mq('sm') {
+			@include mq('md') {
 				width: rem(238px);
 				height: rem(103px);
 				margin: 0 0 0 rem(45px); 
@@ -48,7 +48,7 @@
 	}
 
 	.navbar-collapse {
-		@include mq('sm') {
+		@include mq('md') {
 			display: inline-flex !important;
 			vertical-align: middle;
 			float: none;
@@ -71,10 +71,14 @@
 			&.navbar-nav {
 				float: none;
 				clear: both;
+				@include mq('tb') {
+					display: block;
+					text-align: center;
+				}
 				> li {
 					display: block;
 					text-align: center;
-					@include mq('sm') {
+					@include mq('md') {
 						text-align: left;
 						text-transform: uppercase;
 						display: inline-block;
@@ -82,9 +86,18 @@
 						float: none;
 						margin: 0 rem(16px);
 					}
+					@include mq('tb') {
+						display: inline-block;
+						margin: rem(12px);
+					}
 					a {
-						padding: 0 rem(4px);
-						
+						padding: rem(10px) rem(12px);
+						@include mq('md') {
+							padding: 0 rem(4px);
+						}
+						@include mq('tb') {
+							@include font(14px);
+						}
 						&:hover,
 						&:focus {
 							background-color: transparent;

@@ -30,10 +30,17 @@ service_items
     $classesArray;
 
     global $post;
+    $slug = get_post_field( 'post_name', get_the_ID() );
 
 ?> 
 
-<?php if(have_posts()): while(have_posts()): the_post(); ?>
+<?php if(have_posts()): while(have_posts()): the_post(); 
+
+    // Vars
+    $service_txt2 = get_field('service_txt2');
+    $prod_image = get_field('service_image');
+    ?>
+
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
         <header class="header__top">
             <img src="<?php the_field('service_logo'); ?>" alt="<?php the_title(); ?>">
@@ -44,7 +51,18 @@ service_items
                 <?php the_content();?>
             </div>
             <div class="service-content__image">
-                <figure style="background-image: url(<?php the_post_thumbnail_url('full'); ?>)"></figure>
+                <?php if($prod_image): ?>
+                    <figure class="service-content__image__thumb" style="background-image: url('<?php echo $prod_image; ?>');">
+                    </figure>
+                <?php else: ?>  
+                    <figure class="service-content__image__thumb" style="background-image: url('<?php the_post_thumbnail_url("full"); ?>');">
+                    </figure>
+                <?php endif;?>
+                <?php if($service_txt2): ?>
+                    <div class="service-content__image--text">
+                        <?php echo $service_txt2; ?>
+                    </div>
+                <?php endif;?>
             </div>            
         </section>
         <?php 
@@ -71,6 +89,7 @@ service_items
 
                             $service_items_ext = get_sub_field('service_items_ext');
                             $service_items_image = get_sub_field('service_items_image');
+                            $service_items_image_2 = get_sub_field('service_items_image_2');
                             $service_items_catalog = get_sub_field('service_items_catalog');
                             $service_items_catalog_image = get_sub_field('service_items_catalog_image');
 
@@ -86,6 +105,9 @@ service_items
                                 <div class="tab-pane__with-thumb">
                                 <figure class="tab-pane__thumb">
                                     <img src="<?php echo $service_items_image; ?>" alt="<?php the_sub_field('service_items_title'); ?>">
+                                    <?php if($service_items_image_2):?>
+                                        <img src="<?php echo $service_items_image_2; ?>" alt="<?php the_sub_field('service_items_title'); ?>" class="image-2">
+                                    <?php endif; ?>   
                                 </figure>
                             <?php endif; ?>
                                 <div class="tab-pane__text">
@@ -101,9 +123,9 @@ service_items
                             if($service_items_ext && $post->ID != 33):
                                 
                             ?>
-                                <div class="tab-content__ext">
-                                    <nav class="tab-content__ext-menu">
-                                        <ul class="nav nav-tabs service-attributes-nav-tabs__internal">
+                                <div class="tab-content__ext tab-content__ext-<?php echo $slug; ?>">
+                                    <nav class="tab-content__ext-menu tab-content__ext-menu-<?php echo $slug; ?>">
+                                        <ul class="nav nav-tabs nav-tabs-<?php echo $slug; ?> service-attributes-nav-tabs__internal">
                                             <?php 
                                                 while(have_rows('service_items_ext')): the_row();
 
@@ -118,7 +140,7 @@ service_items
                                         </ul>
                                     </nav>   
 
-                                    <div class="tab-content tab-content__ext-side">
+                                    <div class="tab-content tab-content-<?php echo $slug; ?> tab-content__ext-side">
                                         <?php 
                                             while(have_rows('service_items_ext')): the_row();
 
@@ -135,9 +157,17 @@ service_items
                                                 endif;
 
                                             ?>
-                                            <div id="service-internal-<?php echo $count0.'_'.$count2; ?>" class="tab-pane fade <?php echo $classesArray; ?>">
-                                                <h4> <?php echo $service_items_ext_title; ?></h4>
-                                                <?php echo $service_items_ext_text; ?>
+                                            <div id="service-internal-<?php echo $count0.'_'.$count2; ?>" class="tab-pane fade <?php echo $classesArray; if($service_items_ext_image): echo ' image-enable'; endif; ?>">
+                                                <div class="text-wrapper">
+                                                    <h4> <?php echo $service_items_ext_title; ?></h4>
+                                                    <?php echo $service_items_ext_text; ?>
+                                                </div>
+
+                                                <?php if($service_items_ext_image):?>
+                                                    <figure class="image-wrapper">
+                                                        <img src="<?php echo $service_items_ext_image; ?>" alt="<?php echo $service_items_ext_title; ?>">
+                                                    </figure>
+                                                <?php endif;?>
                                             </div>
 
                                         <?php $count2++;
@@ -165,8 +195,15 @@ service_items
 
                                             ?>
                                             <div id="service-internal-<?php echo $count0.'_'.$count2; ?>" class="tab-content tab-content__ext-grouped__item">
-                                                <h4><?php echo $service_items_ext_title; ?></h4>
-                                                <?php echo $service_items_ext_text; ?>
+                                                <div class="text-wrapper">
+                                                    <h4><?php echo $service_items_ext_title; ?></h4>
+                                                    <?php echo $service_items_ext_text; ?>
+                                                </div>
+                                                <?php if($service_items_ext_image):?>
+                                                    <figure class="image-wrapper">
+                                                        <img src="<?php echo $service_items_ext_image; ?>" alt="<?php echo $service_items_ext_title; ?>">
+                                                    </figure>
+                                                <?php endif;?>
                                             </div>
 
                                         <?php $count2++;
