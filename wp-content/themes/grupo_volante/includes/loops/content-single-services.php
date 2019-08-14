@@ -39,6 +39,7 @@ service_items
     // Vars
     $service_txt2 = get_field('service_txt2');
     $prod_image = get_field('service_image');
+    $service_catalog = get_field('service_catalog'); 
     ?>
 
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
@@ -65,6 +66,11 @@ service_items
                 <?php endif;?>
             </div>            
         </section>
+        <?php if($service_catalog):?>
+        <section id="ContentServiceCatalog" class="service-catalog container">
+            <a href="<?php echo $service_catalog; ?>" target="_blank">Ver Catálogo</a>
+        </section>
+        <?php endif;?>
         <?php 
             if($service_items): 
                     

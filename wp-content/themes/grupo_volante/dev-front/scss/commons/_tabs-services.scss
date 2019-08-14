@@ -152,7 +152,7 @@
 					padding: rem(12px);
 					border: rem(1px) solid $gray-lt;
 					&.image-2 {
-						margin-top: rem(240px);
+						margin-top: rem(40px);
 					}
 				}
 			}
@@ -209,24 +209,6 @@
 					}
 				}
 				.nav-tabs {
-					&-chemetrics {
-						@include mq('sm') {
-							display: flex;
-						}
-						li {
-							@include mq('sm') {
-								border: rem(1px) solid $gray-lt;
-								display: table;
-								height: rem(66px);
-								a {
-									display: table-cell;
-									vertical-align: middle;
-									margin: 0 0;
-									text-align: center;
-								}
-							}
-						}
-					}
 					li {
 						float: none;
 						display: block;
@@ -245,6 +227,24 @@
 								&:focus {
 									color: $white;
 									background-color: $blue;
+								}
+							}
+						}
+					}
+					&-chemetrics {
+						@include mq('sm') {
+							display: flex;
+						}
+						li {
+							@include mq('sm') {
+								border: rem(1px) solid $gray-lt;
+								display: table;
+								height: rem(66px);
+								a {
+									display: table-cell;
+									vertical-align: middle;
+									margin: 0 0;
+									text-align: center;
 								}
 							}
 						}

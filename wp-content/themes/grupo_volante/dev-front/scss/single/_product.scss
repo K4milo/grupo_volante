@@ -59,3 +59,12 @@
 		}
 	}
 }
+
+.service-catalog {
+	padding: rem(16px);
+	text-align: center;
+	a {
+		@include yellowBtn(10px, 16px);
+		padding: rem(10px) rem(20px); 
+	}
+}
