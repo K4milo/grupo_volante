@@ -1,8 +1,8 @@
 .service-content {
-	padding: rem(32px);
+	padding: rem(32px) rem(30px) 0;
 	min-height: 40vh;
 	@include mq('md') {
-		padding: rem(12px) 0 rem(52px);
+		padding: rem(12px) 0 rem(12px);
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -61,10 +61,14 @@
 }
 
 .service-catalog {
-	padding: rem(16px);
+	padding: rem(30px) rem(20px);
 	text-align: center;
+	margin-bottom: rem(30px);
 	a {
-		@include yellowBtn(10px, 16px);
-		padding: rem(10px) rem(20px); 
+		@include yellowBtn(10px, 22px);
+		background-color: $br-blue;
+		font-family: $bd;
+		padding: rem(10px) rem(30px); 
+		border: rem(7px) solid $br-blue-lt;
 	}
 }
